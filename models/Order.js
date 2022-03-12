@@ -53,8 +53,10 @@ const orderSchema = mongoose.Schema(
       },
     },
     orderStatus: {
-      type: Boolean,
-      default: false,
+      type: String,
+      require: true,
+      enum: ['Pending', 'Accept', 'Reject'],
+      default: 'Pending',
     },
     reason: {
       type: String,
