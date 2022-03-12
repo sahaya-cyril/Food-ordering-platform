@@ -1,0 +1,19 @@
+version: "3"
+services:
+  food-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    volumes:
+     - ./:/app
+     - /app/node_modules
+    environment:
+     - NODE_ENV=development
+     - MONGO_URI=mongodb://mongodb:27017/FOOD-ORDERING-PLATFORM
+    command: npm run dev
+
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/FOOD-ORDERING-PLATFORM

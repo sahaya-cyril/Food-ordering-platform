@@ -1,0 +1,11 @@
+version: "3"
+services:
+  food-app:
+    build:
+        context: .
+        args:
+          NODE_ENV: production
+    environment:
+     - NODE_ENV=production
+     - MONGO_URI=mongodb+srv://<username>:<password>@nodeandexpress.bqtxr.mongodb.net/FOOD-ORDERING-PLATFORM?retryWrites=true&w=majority
+    command: npm start
